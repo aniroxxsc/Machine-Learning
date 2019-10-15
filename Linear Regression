@@ -1,0 +1,23 @@
+head_size=[4512,3738,4261,3777,4177]
+brain_size=[1530,1297,1335,1282,1590]
+
+x=0
+y=0
+x2=0
+for i in range(0,5):
+    x+=head_size[i]
+    y+=brain_size[i]
+xy=0;
+x2=0;
+for i in range (0,5):
+    xy+=(head_size[i]*brain_size[i])
+    x2=x2+((head_size[i])**2)
+slope=((5*xy)-(x*y))/((5*x2)-x**2)
+print(slope)
+c=(y-slope*x)/5
+print(c)
+
+'''output:
+0.3053727542922042
+156.9093166820083
+'''
