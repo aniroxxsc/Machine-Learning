@@ -1,0 +1,62 @@
+'''for a given dataset with attributes outlook, temperature, humidity, wind, play tennis
+predict if tennis will be payed when the conditions are sunny, cool,high, strong'''
+
+import numpy as np
+import pandas as pd
+df=pd.read_excel(r'/Users/apple/Documents/ML lab 5.xlsx')
+print(df)
+a=df['Outlook']
+b=df['Temperature']
+c=df['Humidity']
+d=df['Wind']
+e=df['Play tennis']
+counta=0
+countb=0
+countc=0
+countd=0
+counte=0
+count_na=0
+count_nb=0
+count_nc=0
+count_nd=0
+count_ne=0
+for i in range(0,14):
+    if (e[i]=='yes'):
+        counte+=1
+        if(a[i]=='sunny'):
+            counta+=1
+        if(b[i]=='cool'):
+            countb+=1
+        if(c[i]=='high'):
+            countc+=1
+        if(d[i]=='strong'):
+            countd+=1;
+proba=counta/counte
+probb=countb/counte
+probc=countc/counte
+probd=countd/counte
+
+for i in range(0,a.count()):
+    if (e[i]=='no'):
+        count_ne+=1
+        if(a[i]=='sunny'):
+            count_na+=1
+        if(b[i]=='cool'):
+            count_nb+=1
+        if(c[i]=='high'):
+            count_nc+=1
+        if(d[i]=='strong'):
+            count_nd+=1;
+prob_na=count_na/count_ne
+prob_nb=count_nb/count_ne
+prob_nc=count_nc/count_ne
+prob_nd=count_nd/count_ne
+
+prob_yes=(counte/a.count())*proba*probb*probc*probd
+prob_no=(count_ne/a.count())*prob_na*prob_nb*prob_nc*prob_nd
+print(prob_yes)
+print(prob_no)
+if(prob_yes>prob_no):
+    print('yes')
+else:
+    print('no')
