@@ -1,5 +1,22 @@
 '''for a given dataset with attributes outlook, temperature, humidity, wind, play tennis
-predict if tennis will be payed when the conditions are sunny, cool,high, strong'''
+predict if tennis will be payed when the conditions are sunny, cool,high, strong
+Dataset is :
+      Day   Outlook Temperature Humidity    Wind Play tennis
+0    day1     sunny         hot     high    weak          no
+1    day2     sunny         hot     high  strong          no
+2    day3  overcast         hot     high    weak         yes
+3    day4      rain        mild     high    weak         yes
+4    day5      rain        cool   normal    weak         yes
+5    day6      rain        cool   normal  strong          no
+6    day7  overcast        cool   normal  strong         yes
+7    day8     sunny        mild     high    weak          no
+8    day9     sunny        cool   normal    weak         yes
+9   day10      rain        mild   normal    weak         yes
+10  day11     sunny        mild   normal  strong         yes
+11  day12  overcast        mild     high  strong         yes
+12  day13  overcast         hot   normal    weak         yes
+13  day14      rain        mild     high  strong          no
+'''
 
 import numpy as np
 import pandas as pd
